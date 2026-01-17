@@ -12,6 +12,7 @@
           padding: 0;
           box-sizing: border-box;
         }
+
         body{
           font-family: sans-serif;
         }
@@ -367,6 +368,59 @@ a{
             text-decoration: none;
             font-size: 13px;
         }
+section{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.section-subtitle{
+  color:#9ca3af;
+  margin-bottom:30px;
+  font-size:14px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+
+/* CARD LINK */
+.card-link{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* CARD */
+.card{
+  background:#020617;
+  border-radius:18px;
+  padding:30px 15px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+  border:1px solid #1f2937;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#38bdf8;
+  box-shadow:0 15px 35px rgba(56,189,248,0.4);
+}
+
+.card i{
+  font-size:45px;
+  margin-bottom:12px;
+  color:#38bdf8;
+}
+
+.card h3{
+  font-size:18px;
+}
 
         /* ANIMATIONS */
         @keyframes ticker {
@@ -534,54 +588,77 @@ a{
 
  <!-- ECET SECTION -->
 
-<section id="ecetvideoguidance">
-
-    </br><section id="ecet">
-        <center><h2>ECET 2026 Success Guide</h2>
+<section id="ecet">
+  <center><h2>ECET 2026 Success Guide</h2>
         <p class="section-subtitle">Everything you need for ECET – from preparation to counselling and college selection.</p></center>
-  
- <div class="grid">
-            <div class="card">
-   <i class="fa-solid fa-laptop-code"></i>
-    <h3><a href="https://drive.google.com/drive/folders/1D4qNx21T7XpB3LvY7NdlUlnDI11FnRZ3?usp=sharing">CSE</a></h3>
-            </div>
 
-            <div class="card">
-<i class="fa-solid fa-microchip"></i>
-    <h3><a href="https://drive.google.com/drive/folders/1jTod_hxrV6fSRPbF0rMPGx967x0MOInk?usp=sharing">ECE</a></h3>
-  </div>
-                           
-            <div class="card">
-<i class="fa-solid fa-bolt"></i>
-<h3><a href="https://drive.google.com/drive/folders/1dsMYXB1OYlRPwdXUaNuJswP0AxBcjRRv?usp=sharing">EEE</a></h3>
-                          </div>
-            <div class="card">
-<i class="fa-solid fa-building"></i>
-<h3><a href="https://drive.google.com/drive/folders/1U_OqCfkX4PansfzfvZGiXDiJuixmbvLA?usp=sharing">CIVIL</a></h3>             
-        </div>
+  <div class="grid">
 
-<div class="card">
-<i class="fa-solid fa-gear"></i>
-<h3><a href="https://drive.google.com/drive/folders/1Eui25lTYEu0kR1iQGbyNikBzT0pEpuC8?usp=sharing">MECH</a></h3>              
-        </div>
-<div class="card">
-<i class="fa-solid fa-layer-group"></i>
-<h3><a href="https://drive.google.com/drive/folders/116XGFbNG_EGrD7zDOu74ky0paStdfZpD?usp=sharing">OTHER BRANCHES</a></h3>              
-        </div>
-<div class="card">
-<i class="fa-solid fa-file-pdf"></i>
-<h3><a href="https://drive.google.com/drive/folders/1aySjN0yVrBFlgZ3w894DD11VWOPIzmlL?usp=sharing">M P C</a></h3>              
-        </div>
-<div class="card">
-<i class="fa-solid fa-pills"></i>
-<h3><a href="https://drive.google.com/drive/folders/116XGFbNG_EGrD7zDOu74ky0paStdfZpD?usp=sharing">PHARMACY & BSC MATHEMATICS</a></h3>              
-        </div>
-  
-        
-            <div class="card">
-                <h3>ECET 2025 Preparation Plan</h3>
-                <p>How to plan subject-wise preparation, previous papers, and mock tests while managing Diploma workload.</p>
-            </div>
+    <!-- CSE -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/1D4qNx21T7XpB3LvY7NdlUlnDI11FnRZ3?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>CSE</h3>
+      </div>
+    </a>
+
+    <!-- ECE -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/1jTod_hxrV6fSRPbF0rMPGx967x0MOInk?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>ECE</h3>
+      </div>
+    </a>
+
+    <!-- EEE -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/1dsMYXB1OYlRPwdXUaNuJswP0AxBcjRRv?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>EEE</h3>
+      </div>
+    </a>
+
+    <!-- CIVIL -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/1U_OqCfkX4PansfzfvZGiXDiJuixmbvLA?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-building"></i>
+        <h3>CIVIL</h3>
+      </div>
+    </a>
+
+    <!-- MECH -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/1Eui25lTYEu0kR1iQGbyNikBzT0pEpuC8?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-gear"></i>
+        <h3>MECH</h3>
+      </div>
+    </a>
+
+    <!-- MPC -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/1aySjN0yVrBFlgZ3w894DD11VWOPIzmlL?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-file-pdf"></i>
+        <h3>MPC</h3>
+      </div>
+    </a>
+
+    <!-- PHARMACY + BSC -->
+    <a class="card-link" target="_blank"
+       href="https://drive.google.com/drive/folders/116XGFbNG_EGrD7zDOu74ky0paStdfZpD?usp=sharing">
+      <div class="card">
+        <i class="fa-solid fa-pills"></i>
+        <h3>PHARMACY & BSC</h3>
+      </div>
+    </a>
+
+
+
             <div class="card">
                 <h3>Rank vs College Overview</h3>
                 <p>COMMING SOON...</p>
@@ -594,8 +671,8 @@ a{
                 <h3>Best Branch Choices after ECET</h3>
                 <p>COMMING SOON...</p>
             </div>
-        </div>
-    </section>
+       </div>
+</section>
 
     <!-- DIPLOMA SECTION -->
     <section id="diploma">
@@ -606,27 +683,27 @@ a{
             <div class="card">
                 <span class="badge">CSE</span>
                 <h3>Diploma in CSE</h3>
-                <p>Syllabus overview, important questions, syllabus videos, ECET Guidence.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <span class="badge">ECE</span>
                 <h3>Diploma in ECE</h3>
-                <p>Syllabus overview, important questions, syllabus videos, ECET Guidence.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <span class="badge">EEE</span>
                 <h3>Diploma in EEE</h3>
-                <p>Syllabus overview, important questions, syllabus videos, ECET Guidence.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <span class="badge">MECH</span>
                 <h3>Diploma in Mechanical</h3>
-                <p>Syllabus overview, previous year question papers, ECET Guidence.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <span class="badge">CIVIL</span>
                 <h3>Diploma in Civil</h3>
-                <p>Syllabus overview, previous year question papers, ECET Guidence.</p>
+               <p>comming soon..</p>
             </div>
         </div>
     </section>
@@ -641,19 +718,19 @@ a{
         <div class="grid">
             <div class="card">
                 <h3>Choosing the Right Branch</h3>
-                <p>Pros and cons of CSE, AI & ML, IT, ECE, Civil, Mechanical, and emerging branches with placement scope.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <h3>1st Year Roadmap</h3>
-                <p>How to manage subjects, projects, coding, and basic skills without getting overloaded.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <h3>Placement & Internship Strategy</h3>
-                <p>When to start coding, working on projects, and applying for internships for maximum placement chances.</p>
+                <p>comming soon..</p>
             </div>
             <div class="card">
                 <h3>ECET to B.Tech Journey</h3>
-                <p>Mindset shift from Diploma to engineering college, handling English, labs, and new environment.</p>
+                <p>comming soon..</p>
             </div>
         </div>
     </section>
