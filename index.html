@@ -487,6 +487,63 @@ section{
     font-weight: 600;
     padding-top: 5px;
 }
+
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .desktop-btn{
+    display:none;
+  }
+  /* MENU ICON */
+.menu-icon{
+  display:none;
+  font-size:22px;
+  color:#e5e7eb;
+  cursor:pointer;
+}
+  @media(max-width:768px){
+
+  .menu-icon{display:block}
+
+  .nav-links{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#020617;
+    flex-direction:column;
+    display:none;
+    padding:15px 0;
+    border-top:1px solid #1f2937;
+    animation:slideDown 0.3s ease;
+  }
+
+  .nav-links a{
+    padding:12px 20px;
+    display:block;
+  }
+
+  .nav-links.show{display:flex}
+
+  .btn-primary{display:none}
+}
+
+a{
+text-align:center;
+}
+
+@keyframes slideDown{
+  from{opacity:0; transform:translateY(-10px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.hero.menu-open-shift{
+  margin-top:120px;   /* 🔥 adjust value if needed */
+  transition: margin-top 0.3s ease;
+}
+
     </style>
 </head>
 <body>
@@ -497,14 +554,21 @@ section{
     <header>
         <nav class="navbar">
             <div class="logo">CodingChampsSai</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#diploma">Diploma</a>
-                <a href="#ecet">ECET</a>
-                <a href="#btech">B.Tech Guide</a>
-                <a href="#notes">Notes</a>
-                <a href="#tools">Tools</a>
-            </div>
+<!-- MENU ICON -->
+    
+<div class="menu-icon" onclick="toggleMenu()">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#diploma" onclick="closeMenu()">Diploma</a>
+  <a href="#ecet" onclick="closeMenu()">ECET</a>
+  <a href="#btech" onclick="closeMenu()">B.Tech Guide</a>
+  <a href="#notes" onclick="closeMenu()">Notes</a>
+  <a href="#tools" onclick="closeMenu()">Tools</a>
+</div>
+
             <a href="https://www.youtube.com/@DiplomaTribe" target="_blank" class="btn-primary">Visit YouTube Channel</a>
         </nav>
     </header>
@@ -832,17 +896,23 @@ document.getElementById("diplomaForm").addEventListener("submit", function (e) {
         <small>1st Year considered = ${firstConsidered.toFixed(2)} marks</small>
     `;
 });
- function sam(){
-const navlink= document.getElementById('navlinks');navlink.classList.toggle('show');
-  }
-  window.addEventListener("load", function() {
-  const preloader = document.getElementById("preloader");
-  setTimeout(() => {
-    preloader.style.opacity = "0";
-    preloader.style.visibility = "hidden";
-    setTimeout(() => preloader.style.display = "none", 500);
-  }, 1000); // 🔥 Wait 20 seconds before hiding
-});
+
+  function toggleMenu(){
+  const menu = document.getElementById("navLinks");
+  const hero = document.querySelector(".hero");
+
+  menu.classList.toggle("show");
+  hero.classList.toggle("menu-open-shift");
+}
+
+function closeMenu(){
+  document.getElementById("navLinks").classList.remove("show");
+  document.querySelector(".hero").classList.remove("menu-open-shift");
+}
+
+
+
+ 
   
 
 </script>

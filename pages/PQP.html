@@ -72,6 +72,52 @@ footer{
   }
 }
 
+/* ===== MOBILE MENU ===== */
+.menu-icon{
+  display:none;
+  font-size:22px;
+  color:#e5e7eb;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .menu-icon{display:block}
+
+  .nav-links{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#020617;
+    flex-direction:column;
+    display:none;
+    padding:15px 0;
+    border-top:1px solid #1f2937;
+    animation:slideDown 0.3s ease;
+  }
+
+  .nav-links a{
+    padding:12px 20px;
+    display:block;
+  }
+
+  .nav-links.show{display:flex}
+
+  .btn-primary{display:none}
+}
+a{
+text-align:center;
+
+@keyframes slideDown{
+  from{opacity:0; transform:translateY(-10px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.hero.menu-open-shift{
+  margin-top:120px;   /* 🔥 adjust value if needed */
+  transition: margin-top 0.3s ease;
+}
 </style>
 </head>
 
@@ -80,8 +126,12 @@ footer{
 <header>
   <nav class="navbar">
     <div class="logo">CodingChampsSai</div>
-    <div class="nav-links">
-      <a href="https://sailekkala2006.github.io/coding_champs_sai/">Home</a>
+    <div class="menu-icon" onclick="toggleMenu()">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+<a href="https://sailekkala2006.github.io/coding_champs_sai/">Home</a>
 <a href="https://sailekkala2006.github.io/coding_champs_sai/">ECET</a>
 <a href="shortnotes.html">Short Notes</a>
 <a href="PQP.html">Previous Papers</a>
@@ -118,7 +168,7 @@ footer{
       <div class="card"><i class="fa-solid fa-file-pdf"></i><h3>MECH Papers</h3></div>
     </a>
     <a target="_blank" href="https://drive.google.com/drive/folders/1Rlyd3NmiRHyKn3MSNZD-qGBTyrO3YMhR">
-      <div class="card"><i class="fa-solid fa-file-pdf"></i><h3>EIC Papers</h3></div>
+      <div class="card"><i class="fa-solid fa-file-pdf"></i><h3>EIE Papers</h3></div>
     </a>
     
 
@@ -136,4 +186,18 @@ footer{
 
 
 </body>
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("navLinks");
+  const hero = document.querySelector(".hero");
+
+  menu.classList.toggle("show");
+  hero.classList.toggle("menu-open-shift");
+}
+
+function closeMenu(){
+  document.getElementById("navLinks").classList.remove("show");
+  document.querySelector(".hero").classList.remove("menu-open-shift");
+}
+</script>
 </html>
